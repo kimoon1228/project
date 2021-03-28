@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cl_item{
+            display: inline-block;
+            border: 1px solid black;
+            width: 30px;
+            height: 30px;
+            background-size: 30px 30px;
+          
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <script>
+        var v_itemName=
+        "피바라기,용의 발톱,대자연의 힘,얼어붙은 심장,수호 천사,구인수의 격노검,마법공학 총검,"+
+        "무한의 대검,이온 충격기,강철의 솔라리 펜던트,루덴의 메아리,모렐로노미콘,라바돈의 죽음모자,"+
+        "고속 연사포,구원,루난의 허리케인,쇼진의 창,스태틱의 단검,워모그의 갑옷,지크의 전령,서풍,도적의 장갑,"+
+        "정의의 손길,보석 건틀릿,수은,덫 발톱,죽음의 검,거인 학살자,최후의 속삭임,덤불 조끼,거인의 결의,"+
+        "즈롯 차원문,침묵의 장막,힘의 성배,푸른 파수꾼,가고일 돌갑옷,태양불꽃 망토,수호자의 흉갑,요우무의 유령검,"+
+        "대장군의 깃발,나무정령 새싹,결투가의 열정,용의 정령,요술사의 모자,신성의 검"
+
+        v_itemName= v_itemName.split(",");
+
+        v_item ={};
+        v_item.name = [];
+        v_item.png = [];
+        function f_itemJson(){
+            for(var i=0; i<=v_itemName.length-1; i++){
+                v_item.name[i] = v_itemName[i];
+                v_item.png[i] = "./images/item"+[i+1]+".png" ;
+            }
+                return v_item;
+        }
+        
+        function f_itemMake(){
+             f_itemJson();
+            console.log(v_item)
+            for(var i=0; i<v_item.png.length; i++){
+                var v_div = document.createElement("div")
+                v_div.setAttribute("class","cl_item")
+                v_div.style.backgroundImage= "url("+v_item.png[i]+")";
+            document.body.appendChild(v_div)    
+           }
+
+        }
+        f_itemMake();
+    
+    </script>
+</body>
+</html>
