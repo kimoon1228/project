@@ -27,12 +27,15 @@ for i in inner:
     info = i.select_one('.list_info')
     price = i.select_one('.price')
     count = i.select_one('.count')
+    like = i.select_one('.txt_cnt_like')
     print(img)
     print(item.text)
     print(info.a['title'])
     print(price.text)
     if(count != None):
-        print(count.text)
+        print(count.text.replace(" ",""))
+    print(like.text.replace(" ",""))
+
 
 
 # #상품 이미지
